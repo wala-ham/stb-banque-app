@@ -1,0 +1,34 @@
+Questions to Test Your LLM
+Here are some questions you can ask your LLM to test its understanding and generation capabilities based on your client and supplier data. I've categorized them to cover different aspects of your dataset and the analytical features you've created.
+
+General Questions About the Data Structure and Content:
+"Tell me about the client dataset. What kind of information does it contain?"
+"What are the main differences between the client and supplier datasets?"
+"Can you list the columns available in the supplier data and explain what each one means?"
+"Are there any missing values in the 'Salaire' column for clients? If so, how are they handled?"
+Questions Focusing on Quantitative Insights:
+"What is the average 'Total montant cheque' for clients?"
+"What is the maximum 'Montant_cheque' observed in the supplier data?"
+"How many distinct 'Segment' categories are there for clients?"
+"Can you give me an idea of the distribution of 'Nombre' (number of checks/transactions) in the client dataset?"
+"What's the spread of 'score_fragmentation' for suppliers?"
+Questions About Trends and Categorical Breakdowns:
+"Which 'Segment' has the highest number of clients?"
+"What are the top 5 'Activite_Economique' categories among suppliers?"
+"Are there more male or female clients in the dataset?"
+"What can you tell me about the distribution of clients across different 'Tranche_Age' groups?"
+Questions Specific to "Paiements Fractionnés" (Split Payments):
+"Explain what 'score_fragmentation' represents and why it's important."
+"Which client segment appears to have a higher average 'score_fragmentation'?"
+"Are there any specific supplier activities that tend to have a high fragmentation score?"
+"What is the threshold for a high fragmentation score for clients, according to the 95th percentile?"
+More Complex / Interpretive Questions (Leveraging the prompt context):
+"Based on the data summaries, what are some key insights about client payment behavior?"
+"Are there any potential anomalies visible in the supplier data based on the summary statistics?"
+"If I'm looking for clients who frequently split their payments, what columns should I pay close attention to?"
+"What business questions can be answered using the 'is_split_record' column?"
+"How can I identify 'high-value' clients or suppliers using the available data?"
+Questions to Test Limitations/Refusals:
+"What is the precise 'Compte_key_Payeur' of the client with the highest 'score_fragmentation'?" (This tests if it knows it can't directly query specific IDs from a summary).
+"Generate a graph showing the monthly 'Total montant cheque' for clients." (This tests if it knows it's a text model and can't generate visuals).
+"Give me a detailed list of all client transactions." (This tests its token limits and awareness of providing summaries vs raw data).
