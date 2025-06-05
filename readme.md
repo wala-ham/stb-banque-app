@@ -81,18 +81,3 @@ L’application est divisée en **deux niveaux d’analyse** :
 - Possibilité de **télécharger une liste d’exemples de questions**.
 
 ---
-
-## 🛠️ Technologies & Outils Utilisés
-
-| Domaine                  | Outils / Bibliothèques                    |
-| ------------------------ | ----------------------------------------- |
-| **Langage**              | Python                                    |
-| **Web**                  | Streamlit                                 |
-| **Manipulation données** | Pandas, NumPy                             |
-| **Visualisation**        | Matplotlib, Seaborn                       |
-| **Machine Learning**     | Scikit-learn                              |
-|                          | - StandardScaler                          |
-|                          | - PCA                                     |
-|                          | - IsolationForest                         |
-|                          | - KMeans                                  |
-| **IA Générative**        | Gemini Pro (Google Generative AI via API) |
