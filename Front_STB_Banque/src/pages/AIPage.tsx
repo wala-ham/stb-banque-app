@@ -3,12 +3,40 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import { useEffect, useState } from "react";
-import clusteringClientsImg from "@/assets/ai/clustering-clients.png";
-import clusteringFournisseursImg from "@/assets/ai/clustering-fournisseurs.png";
+import clusteringClientsImg_3 from "@/assets/ai/clustering-clients.png";
+import clusteringClientsImg_4 from "@/assets/ai/clustering-clients4.png";
+import clusteringClientsImg_5 from "@/assets/ai/clustering-clients5.png";
+import clusteringClientsImg_6 from "@/assets/ai/clustering-clients6.png";
+import clusteringClientsImg_7 from "@/assets/ai/clustering-clients7.png";
+import clusteringFournisseursImg_3 from "@/assets/ai/clustering-fournisseurs3.png";
+import clusteringFournisseursImg_4 from "@/assets/ai/clustering-fournisseurs4.png";
+import clusteringFournisseursImg_5 from "@/assets/ai/clustering-fournisseurs5.png";
+import clusteringFournisseursImg_6 from "@/assets/ai/clustering-fournisseurs6.png";
+import clusteringFournisseursImg_7 from "@/assets/ai/clustering-fournisseurs7.png";
+
+// import clusteringFournisseursImg from "@/assets/ai/clustering-fournisseurs.png";
 import anomalyClientsPcaImg from "@/assets/ai/anomaly-clients-pca.png";
 import anomalyFournisseursPcaImg from "@/assets/ai/anomaly-fournisseurs-pca.png";
 import anomalyClientsFragmentationImg from "@/assets/ai/anomaly-clients-fragmentation.png";
+
+import figure1 from "@/assets/shared/Figure_1.png";
+import figure2 from "@/assets/shared/Figure_2.png";
+import figure3 from "@/assets/shared/Figure_3.png";
+import figure4 from "@/assets/shared/Figure_4.png";
+import figure5 from "@/assets/shared/Figure_5.png";
+import figure6 from "@/assets/shared/Figure_6.png";
+import figure7 from "@/assets/shared/Figure_7.png";
+import figure8 from "@/assets/shared/Figure_8.png";
+import figure9 from "@/assets/shared/Figure_9.png";
+import figure10 from "@/assets/shared/Figure_10.png";
 
 import {
   ScatterChart,
@@ -51,6 +79,21 @@ const AIPage = () => {
     { time: "16:00", normal: 2800, anomalies: 8 },
     { time: "20:00", normal: 1800, anomalies: 4 },
   ];
+  const [selectedK, setSelectedK] = useState(3);
+  const kMeansImages = {
+    3: clusteringClientsImg_3,
+    4: clusteringClientsImg_4,
+    5: clusteringClientsImg_5,
+    6: clusteringClientsImg_6,
+    7: clusteringClientsImg_7,
+  };
+  const kMeansFournisseursImages = {
+    3: clusteringFournisseursImg_3,
+    4: clusteringFournisseursImg_4,
+    5: clusteringFournisseursImg_5,
+    6: clusteringFournisseursImg_6,
+    7: clusteringFournisseursImg_7,
+  };
 
   const riskScores = [
     { category: "Très Faible", value: 65, color: "#00CC66" },
@@ -203,11 +246,11 @@ const AIPage = () => {
 
         {/* Main AI Content */}
         <Tabs defaultValue="clustering" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="clustering">Clustering</TabsTrigger>
             <TabsTrigger value="anomalies">Détection d'Anomalies</TabsTrigger>
-            <TabsTrigger value="prediction">Modèles Prédictifs</TabsTrigger>
-            <TabsTrigger value="insights">Insights IA</TabsTrigger>
+            {/* <TabsTrigger value="prediction">Modèles Prédictifs</TabsTrigger> */}
+            {/* <TabsTrigger value="insights">Insights IA</TabsTrigger> */}
           </TabsList>
 
           {/* Clustering Tab */}
@@ -222,16 +265,70 @@ const AIPage = () => {
                     </p>
                   </CardHeader>
                   <CardContent>
-                    <div className="w-full flex justify-center">
-                      <img
-                        src={clusteringClientsImg}
-                        alt="Clustering Clients"
-                        className="w-full max-w-xl h-auto"
-                        style={{ maxHeight: 400 }}
-                      />
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Dendrogramme - Clustering Hiérarchique des Clients
+                        </h4>
+                        <img
+                          src={figure1}
+                          alt="Silhouette Scores Clients"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      {/* <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters Hiérarchiques des Clients
+                          (PCA 2D)
+                        </h4>
+                        <img
+                          src={figure2}
+                          alt="Silhouette Scores Clients"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div> */}
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Analyse du Nombre de Clusters (Méthode du Coude &
+                          Silhouette) pour les Clients
+                        </h4>
+                        <img
+                          src={figure3}
+                          alt="Clusters Hiérarchiques Clients"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters K-Means des Clients (PCA
+                          2D)
+                        </h4>
+                        <img
+                          src={figure4}
+                          alt="Clusters K-Means Clients"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters K-Means des Clients (PCA
+                          3D)
+                        </h4>
+                        <img
+                          src={figure5}
+                          alt="Clusters Features Clients"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
+
                 <Card>
                   <CardHeader>
                     <CardTitle>Clustering K-Means Fournisseurs</CardTitle>
@@ -240,32 +337,88 @@ const AIPage = () => {
                     </p>
                   </CardHeader>
                   <CardContent>
-                    <div className="w-full flex justify-center">
-                      <img
-                        src={clusteringFournisseursImg}
-                        alt="Clustering Fournisseurs"
-                        className="w-full max-w-xl h-auto"
-                        style={{ maxHeight: 400 }}
-                      />
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Dendrogramme - Clustering Hiérarchique des
+                          Fournisseurs
+                        </h4>
+                        <img
+                          src={figure6}
+                          alt="Variance expliquée Fournisseurs"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      {/* <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters Hiérarchiques des
+                          Fournisseurs (PCA 2D)
+                        </h4>
+                        <img
+                          src={figure7}
+                          alt="Silhouette Scores Fournisseurs"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div> */}
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Analyse du Nombre de Clusters (Méthode du Coude &
+                          Silhouette) pour les Fournisseurs
+                        </h4>
+                        <img
+                          src={figure8}
+                          alt="Clusters Hiérarchiques Fournisseurs"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters K-Means des Fournisseurs
+                          (PCA 2D)
+                        </h4>
+                        <img
+                          src={figure9}
+                          alt="Clusters K-Means Fournisseurs"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Visualisation des Clusters K-Means des Fournisseurs
+                          (PCA 3D)
+                        </h4>
+                        <img
+                          src={figure10}
+                          alt="Clusters Features Fournisseurs"
+                          className="w-full max-w-xl h-auto mx-auto"
+                          style={{ maxHeight: 400 }}
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader>
-                    <CardTitle>Segmentation Automatique des Clients</CardTitle>
+                    <CardTitle>
+                      Segmentation des Clients selon leurs Profils Financiers et
+                      Comportementaux
+                    </CardTitle>
                     <p className="text-sm text-gray-600">
-                      Analyse par revenus et âge avec clustering K-means
+                      Analyse comparative des caractéristiques moyennes par
+                      cluster via (K-Means)
                     </p>
                   </CardHeader>
-                  <CardContent>
-                    <div className="w-full flex justify-center">
-                      <img
-                        src="src/assets/chart.png"
-                        alt="Segmentation des clients"
-                        className="w-full max-w-xl h-auto"
-                        style={{ maxHeight: 400 }}
-                      />
-                    </div>
+                  <CardContent className="p-0">
+                    <img
+                      src="src/assets/ai/clusters.png"
+                      alt="Segmentation des clients"
+                      className="block w-full h-auto"
+                      style={{ maxHeight: "100vh", objectFit: "contain" }}
+                    />
                   </CardContent>
                 </Card>
               </div>

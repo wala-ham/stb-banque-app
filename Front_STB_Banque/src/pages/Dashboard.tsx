@@ -407,7 +407,8 @@ const Dashboard = () => {
                     title="client_report"
                     width="100%"
                     height="450"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMDAwZjQ1NWQtZTFjNC00MmQ5LThkODMtZDU3NDE3OGUzOTA1IiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9"
+                    // src="https://app.powerbi.com/view?r=eyJrIjoiMDAwZjQ1NWQtZTFjNC00MmQ5LThkODMtZDU3NDE3OGUzOTA1IiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMzNmZDg4MzctZDU1ZS00MDgyLThhNDctNDgzNDdkNWU2YjQwIiwidCI6IjVjNGJjZGI0LWU1ZjYtNDk3NS04NTE4LTAwZGJmMDIzMzQ5NiIsImMiOjl9"
                     frameBorder="0"
                     allowFullScreen={true}
                     className="rounded-lg shadow w-full"
@@ -448,7 +449,7 @@ const Dashboard = () => {
             {/* --- Analyse Client : Consommation API Python --- */}
             <Card>
               <CardHeader>
-                <CardTitle>Exploration des Clients (Python)</CardTitle>
+                <CardTitle>Exploration des Clients</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -563,7 +564,7 @@ const Dashboard = () => {
                 />
               </CardContent>
             </Card>
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle>Indicateurs de Performance (KPIs)</CardTitle>
               </CardHeader>
@@ -579,7 +580,7 @@ const Dashboard = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </CardContent>
-            </Card>
+            </Card> */}
           </TabsContent>
 
           {/* Suppliers Tab */}
@@ -595,7 +596,8 @@ const Dashboard = () => {
                     title="fournisseur_report"
                     width="100%"
                     height="450"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiY2I2ZjQyNDItZDgxOC00YmM5LThhZjMtZGI0ODE1NzFhMWQ2IiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMmI4YmE0YjYtYjUyOS00MDgxLTljOWItYzMzNzQwMWMxNTk5IiwidCI6IjVjNGJjZGI0LWU1ZjYtNDk3NS04NTE4LTAwZGJmMDIzMzQ5NiIsImMiOjl9"
+                    // src="https://app.powerbi.com/view?r=eyJrIjoiY2I2ZjQyNDItZDgxOC00YmM5LThhZjMtZGI0ODE1NzFhMWQ2IiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9"
                     frameBorder="0"
                     allowFullScreen={true}
                     className="rounded-lg shadow w-full"
@@ -665,7 +667,7 @@ const Dashboard = () => {
             {/* --- Analyse Fournisseur : Consommation API Python --- */}
             <Card>
               <CardHeader>
-                <CardTitle>Exploration des Fournisseurs (Python)</CardTitle>
+                <CardTitle>Exploration des Fournisseurs</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

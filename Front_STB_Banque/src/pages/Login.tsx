@@ -14,7 +14,7 @@ const Login = ({ open, onClose, onSwitchRegister, onLogin }) => {
     setError("");
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:5003/auth/signin", {
+      const res = await fetch("http://192.168.1.13:5003/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

@@ -65,9 +65,7 @@ const Header = () => {
               className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
-              <p className="text-xs text-gray-600">
-                Société Tunisienne de Banque
-              </p>
+              <p className="text-md font-bold text-blue-700">STB Analytica</p>
             </div>
           </button>
           {/* Desktop Navigation */}
@@ -98,6 +96,12 @@ const Header = () => {
                 >
                   Déconnexion
                 </Button>
+                <Button
+                  className="gradient-stb text-white hover:opacity-90 ml-2"
+                  onClick={() => setShowChat(true)}
+                >
+                  Admin Bot
+                </Button>
               </>
             ) : (
               <Button
@@ -108,12 +112,6 @@ const Header = () => {
                 Se connecter
               </Button>
             )}
-            <Button
-              className="gradient-stb text-white hover:opacity-90 ml-2"
-              onClick={() => setShowChat(true)}
-            >
-              Espace Client
-            </Button>
           </div>
           {/* Mobile Menu Button */}
           <Button
@@ -180,7 +178,7 @@ const Header = () => {
                     setIsMenuOpen(false);
                   }}
                 >
-                  Espace Client
+                  Admin Bot
                 </Button>
               </div>
             </nav>

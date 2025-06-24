@@ -1,5 +1,9 @@
 # 💸 Analyse Avancée des Paiements : Clients & Fournisseurs
 
+Analyse Comportementale des Paiements par Chèque : Identification de Patterns et Anomalies via le Clustering et l'Isolation Forest, Enrichie par l'Intelligence Conversationnelle
+
+PayFlow AI
+
 ## 🚀 Vue d’Ensemble du Projet
 
 Cette application web interactive développée avec **Streamlit** propose une **analyse avancée** des paiements des **clients et fournisseurs**. En combinant **Business Intelligence (BI)** et **Intelligence Artificielle (IA)**, elle permet d’explorer, de détecter, de segmenter et d’interagir avec les données via un **chat intelligent**.

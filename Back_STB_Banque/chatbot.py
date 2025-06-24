@@ -10,7 +10,7 @@ import google.generativeai as genai
 # --- Configuration Gemini API ---
 # IMPORTANT: Replace "AIzaSyBoCEyoVBzlT-Toc7j8I52qa9mjTM38UYY" with your actual API key.
 # This key was found in your original Streamlit code.
-GEMINI_API_KEY = "AIzaSyBoCEyoVBzlT-Toc7j8I52qa9mjTM38UYY" # Your API key from the Streamlit app
+GEMINI_API_KEY = "*********" # Your API key from the Streamlit app
 
 try:
     genai.configure(api_key=GEMINI_API_KEY)

@@ -31,7 +31,8 @@ const ChatBot: React.FC<ChatBotProps> = ({ open, onClose }) => {
     setMessages((msgs) => [...msgs, userMsg]);
     setInput("");
     try {
-      const res = await fetch("http://127.0.0.1:5003/chat", {
+      // const res = await fetch("http://127.0.0.1:5003/chat", {
+      const res = await fetch("http://192.168.1.13:5003/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_message: input }),
@@ -52,14 +53,14 @@ const ChatBot: React.FC<ChatBotProps> = ({ open, onClose }) => {
     <div
       style={{
         position: "fixed",
-        top: 350,
-        left: 1470,
+        top: 200,
+        left: 1100,
         bottom: 24,
         right: 24,
         width: "90vw",
         maxWidth: 400,
         minWidth: 260,
-        height: "60vh",
+        height: "70vh",
         maxHeight: 600,
         minHeight: 320,
         background: "white",
